@@ -1,22 +1,12 @@
 # CHANGELOG
 
-## 20.0.0
+## 1.0.0
 -Refonte complet de l'addon
 
 [@+DoM(Ô¿Ô) 🖖]
-## 16.0.2
--Changement calcul retour pour sonde Température EDISIO
 
-[@+DoM(Ô¿Ô) 🖖]
 
-## 16.0.1
--Changement sur le protocol suite a bug sur le mode JAMMING.
 
-[@+DoM(Ô¿Ô) 🖖]
-
-## 16.0.0
-
-- Modifications d'envoie des commandes
 - Les commandes RTS devraient être OK en mode UI
 - La commande ASSOC doit-être avec un ID x
 ![image](https://user-images.githubusercontent.com/97252459/199836924-f628ac47-9b2c-452c-8e1f-834584a2c43c.png)
@@ -42,9 +32,3 @@
         automatic_add: true
         protocol: RTS
         device_id: "1"
-
-## 15.0.0
-
-- Ajout Oregon et Edisio protocoles
-- Ajout Jamming 
-- test autres entités
