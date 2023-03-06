@@ -2,7 +2,7 @@
   "domain": "rfplayer",
   "name": "TEST_NEW_ADDON_HA_RFPlayer",
   "documentation": "https://github.com/Doubledom45/HA_RFPLAYER_TEST/tree/main/Information",
-  "issue_tracker": "https://github.com/Doubledom45/HA_Rfplayer_TEST/tree/main/issues",
+  "issue_tracker": "https://github.com/Doubledom45/HA_RFPLAYER_TEST/issues",
   "config_flow": true,
   "requirements": ["pyserial==3.5", "pyserial-asyncio==0.5"],
   "codeowners": ["@Doubledom45", "@Crazymikefra", "@jaroslawp", "@Aohzan", "@gce-electronics"],
