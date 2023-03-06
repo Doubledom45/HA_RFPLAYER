@@ -1,0 +1,110 @@
+send_command:
+  description: Send device command through RFPlayer.
+  fields:
+    command:
+      name: Command
+      description: The command to be sent.
+      required: true
+      example: "ON"
+      selector:
+        text:
+    protocol:
+      name: Protocol
+      description: RFPlayer compatible protocol.
+      required: true
+      example: CHACON
+      selector:
+        select:
+          options:
+              - ''
+              - "X10"
+              - "VISONIC"
+              - "BLYSS"
+              - "CHACON"
+              - "OREGON"
+              - "DOMIA"
+              - "OWL"
+              - "X2D"
+              - "RTS"
+              - "KD101"
+              - "PARROT"
+              - "TIC"
+              - "FS20"
+              - "JAMMING"
+              - "JAMMING SIMULATE"
+              - "EDISIO"
+              - "EDISIOFRAME"
+          mode: dropdown
+    device_address:
+      name: Device address
+      description: Device address.
+      required: false
+      example: A1
+      selector:
+        text:
+    device_id:
+      name: Device ID
+      description: Device ID.
+      required: false
+      example: 40
+      selector:
+        text:
+    automatic_add:
+      name: Create entity
+      description: Create associated switch entity
+      required: true
+      default: false
+      selector:
+        boolean:
+    entity_type:
+      name: Entity type
+      description: Type of entity created
+      required: false
+      default: switch
+      selector:
+        select:
+          options:
+              - "cover"
+              - "number"
+              - "sensor"
+              - "switch"
+          mode: dropdown
+
+set_device_address:
+  description: Set device adress for RFPlayer entity.
+  fields:
+    device_address:
+      name: Device address
+      description: Device address.
+      required: false
+      example: A1
+      selector:
+        text:
+
+set_device_platform:
+  description: Set device platform for RFPlayer entity.
+  fields:
+    entity_type:
+      name: Entity type
+      description: Type of entity created
+      required: false
+      default: switch
+      selector:
+        select:
+          options:
+              - "cover"
+              - "number"
+              - "sensor"
+              - "switch"
+          mode: dropdown
+
+test_frame:
+  description: Test a frame inside RFPlayer.
+  fields:
+    frame:
+      name: Frame
+      description: The frame to test.
+      required: true
+      example: 'ZIA33{ "frame" :{"header": {"frameType": "0", "cluster": "0", "dataFlag": "0", "rfLevel": "-91", "floorNoise": "-107", "rfQuality": "4", "protocol": "5", "protocolMeaning": "OREGON", "infoType": "4", "frequency": "433920"},"infos": {"subType": "0", "id_PHY": "0x1A2D", "id_PHYMeaning": "THGR122/228/238/268,THGN122/123/132", "adr_channel": "22274",  "adr": "87",  "channel": "2",  "qualifier": "33",  "lowBatt": "1", "measures" : [{"type" : "temperature", "value" : "+21.3", "unit" : "Celsius"}, {"type" : "hygrometry", "value" : "58", "unit" : "%"}]}}}'
+      selector:
+        text:
