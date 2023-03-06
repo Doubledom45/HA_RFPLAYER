@@ -168,40 +168,64 @@ class PacketHandling(ProtocolBase):
         device_id: str = None,
     ) -> None:
         """Send device command to rfplayer gateway."""
-        if device_id is not None:
-            if protocol == "EDISIOFRAME" :
-                self.send_raw_packet(f"ZIA++{protocol} {device_id}")
-## modif envoie cde Protocol sans ID si jamming ( commande )
+        if device_id is not None: # SI PAS D'ID SECTION Device ID
+            if protocol == "EDISIOFRAME" : # A VOIR L'ENVOIE DEVRAIT ETRE DANS Commande ? INSTRUITE PLUS BAS
+                self.send_raw_packet(f"ZIA++{protocol} {device_id}") # à tester ID ?
+
+## modif envoie cde Protocol avec Jamming avec ID et ( commande )
             elif protocol == "JAMMING" :
                 if command == "ON" :
-                    self.send_raw_packet(f"ZIA++{protocol} {device_id}")
+                    self.send_raw_packet(f"ZIA++{protocol} {device_id}") # Permet d'avoir un ID qui représente le niveau
                 elif command == "OFF" :
                     self.send_raw_packet(f"ZIA++{protocol} 0")
                 else:
-                    self.send_raw_packet(f"ZIA++{protocol} {command}")
+                    self.send_raw_packet(f"ZIA++{protocol} {command} {device_id}") # dans le cas d'une commande depuis dévelopeur !
+
+## Peut servir pour le SIMULATE mettre dans Commande avec <delay> de  1 à 255 [secondes]
+            elif protocol == "JAMMING SIMULATE" :
+                if command == "ON" :
+                    self.send_raw_packet(f"ZIA++{protocol} {device_id}") # Permet d'avoir un ID qui représente le <delay>
+                elif command == "OFF" :
+                    self.send_raw_packet(f"ZIA++{protocol}") #Envoie le simulate avec réponse dans 5 sec si JAMMING "ON"
+                else:
+                    self.send_raw_packet(f"ZIA++{protocol} {command} {device_id}") # dans le cas d'une commande depuis dévelopeur avec commande= SIMULATE !
+
             else :
-##                self.send_raw_packet(f"ZIA++{command} {protocol} ID {device_id}")
-## modif d'ordre d'envoie
                 self.send_raw_packet(f"ZIA++{command} ID {device_id} {protocol}")
+
         elif device_address is not None:
             DIM_ADDON=""
             if command == "DIM" :
                 DIM_ADDON="%50"
-##            self.send_raw_packet(f"ZIA++{command} {protocol} {device_address} {DIM_ADDON}")
-## modif d'ordre d'envoie
             self.send_raw_packet(f"ZIA++{command} {device_address} {protocol} {DIM_ADDON}")
         elif protocol == "EDISIOFRAME":
-            self.send_raw_packet(f"ZIA++{command}")
-#        # else:
-#        #     self.send_raw_packet(f"ZIA++{protocol} {command}")
-#####
+            self.send_raw_packet(f"ZIA++{protocol} {command}")
+
+##bug jamming pas d'ID
+## modif envoie cde Protocol sans ID si Jamming ( commande ) vient du développeur !
         else:
-##bug jamming id=0
             if protocol == "JAMMING" :
-                self.send_raw_packet(f"ZIA++{protocol} {command}")
-## modif d'ordre d'envoie
+                if command == "ON" : #la cde n'existe pas vraiement , mais peut-être utilisé pour !
+                    self.send_raw_packet(f"ZIA++{protocol} 7")
+                elif command == "OFF" : #la cde n'existe pas vraiement , mais peut-être utilisé pour !
+                    self.send_raw_packet(f"ZIA++{protocol} 0")
+                else:
+                    self.send_raw_packet(f"ZIA++{protocol} {command}") # on peut mettre le niveau de détection de 0 à 10
+
+## Peut servir pour le SIMULATE mettre dans Commande avec <delay> de  1 à 255 [secondes]
+
+            elif protocol == "JAMMING SIMULATE" :
+                if command == "ON" :
+                    self.send_raw_packet(f"ZIA++{protocol} 30") # Permet d'avoir un nbr qui représente le <delay> forcé ici 30sec
+                elif command == "OFF" :
+                    self.send_raw_packet(f"ZIA++{protocol}") #Envoie le simulate avec réponse dans 5 sec si JAMMING "ON"
+
+
             else :
                 self.send_raw_packet(f"ZIA++{command} {protocol}")
+
+        """Les cde RECEIVER ET REPEATER peuvent être initiés dans commande avec signe + ou - et la sélection du protocol."""
+
 
 class CommandSerialization(PacketHandling):
     """Logic for ensuring asynchronous commands are sent in order."""
