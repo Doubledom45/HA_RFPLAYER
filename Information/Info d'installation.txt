@@ -1,4 +1,4 @@
-# HA_RFPlayer Béta
+# HA_RFPlayer TEST
 
 Composant/intégration personnalisé RFPlayer pour Home assistant
 
@@ -12,7 +12,7 @@ Il est possible de faire l'intégration par HACS, avec un ajout de dêpot person
 
 [Dépôt]()
 
-https://github.com/Doubledom45/HA_Rfplayer_Beta
+https://github.com/Doubledom45/HA_Rfplayer_TEST
 
 [Catégorie]()
 
