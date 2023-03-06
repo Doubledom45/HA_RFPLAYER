@@ -1,12 +1,12 @@
 {
   "domain": "rfplayer",
-  "name": "Beta_RFPlayer dev",
-  "documentation": "https://github.com/Doubledom45/HA_Rfplayer_Beta/tree/dev",
-  "issue_tracker": "https://github.com/Doubledom45/HA_Rfplayer_Beta/tree/dev/issues",
+  "name": "TEST_NEW_ADDON_HA_RFPlayer",
+  "documentation": "https://github.com/Doubledom45/HA_RFPLAYER_TEST/tree/main/Information",
+  "issue_tracker": "https://github.com/Doubledom45/HA_Rfplayer_TEST/tree/main/issues",
   "config_flow": true,
   "requirements": ["pyserial==3.5", "pyserial-asyncio==0.5"],
   "codeowners": ["@Doubledom45", "@Crazymikefra", "@jaroslawp", "@Aohzan", "@gce-electronics"],
   "dependencies": [],
   "iot_class": "assumed_state",
-  "version": "2.0.0"
+  "version": "1.0.0"
 }
