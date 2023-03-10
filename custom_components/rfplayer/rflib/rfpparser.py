@@ -13,8 +13,8 @@ log = logging.getLogger(__name__)
 PACKET_ID_SEP = "_"
 
 PACKET_FIELDS = {
-    "bat": "battery_level",
-    "bat": "battery",
+    "batl": "battery_level",
+    "batv": "battery",
     "cmd": "command",
     "dtc": "detector",
     "sta": "status",
