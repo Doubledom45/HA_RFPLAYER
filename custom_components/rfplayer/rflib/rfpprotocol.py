@@ -166,7 +166,7 @@ class PacketHandling(ProtocolBase):
         encoded_packet = encode_packet(fields)
         self.send_raw_packet(encoded_packet)
 
-    def send_command(
+     def send_command(
         self,
         protocol: str,
         command: str,
@@ -175,12 +175,12 @@ class PacketHandling(ProtocolBase):
     ) -> None:
         """Send device command to rfplayer gateway."""
         if device_id is not None:
-            ###     La commande EDISIOFRAME avec ON ou OFF n'existe PAS et on ne peux pas envoyer un tel ID
-##            if protocol == "EDISIOFRAME" : # A VOIR L'ENVOIE DEVRAIT ETRE DANS Commande ? INSTRUITE PLUS BAS !
-##                self.send_raw_packet(f"ZIA++{protocol} {device_id}") # ne fonctionne pas car ID pas compatible !
+ ###     La commande EDISIOFRAME avec ON ou OFF n'existe PAS MAIS ON PEUX ENVOYER avec PROTOCOL et ID [doit être la commande Hexa]
+            if protocol == "EDISIOFRAME" : # A VOIR L'ENVOIE DEVRAIT ETRE DANS Commande ? INSTRUITE PLUS BAS !
+                self.send_raw_packet(f"ZIA++{protocol} {device_id}") # EST OK SI ID= commande HEXA !
 
 ## modif envoie cde Protocol avec Jamming avec ID et ( commande ) Util si création !
-            if protocol == "JAMMING" :
+            elif protocol == "JAMMING" :
                 if command == "ON" :
                     self.send_raw_packet(f"ZIA++{protocol} {device_id}") # Permet d'avoir un ID qui représente le niveau
                 elif command == "OFF" :
@@ -232,7 +232,7 @@ class PacketHandling(ProtocolBase):
                 self.send_raw_packet(f"ZIA++{command} {protocol}") #ATTENTION AU FORMAT DE LA COMMANDE !
 
         """Les cde RECEIVER ET REPEATER peuvent être initiés dans commande avec signe + ou - et la sélection du protocol."""
-
+ 
 class CommandSerialization(PacketHandling):
     """Logic for ensuring asynchronous commands are sent in order."""
 
