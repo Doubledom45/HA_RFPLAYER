@@ -166,7 +166,7 @@ class PacketHandling(ProtocolBase):
         encoded_packet = encode_packet(fields)
         self.send_raw_packet(encoded_packet)
 
-     def send_command(
+    def send_command(
         self,
         protocol: str,
         command: str,
