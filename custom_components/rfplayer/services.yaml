@@ -16,7 +16,7 @@ send_command:
       selector:
         select:
           options:
-              - ''
+              - null
               - "X10"
               - "VISONIC"
               - "BLYSS"
