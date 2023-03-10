@@ -372,7 +372,7 @@ def infoType_15_decode(infos:list,allowEmptyID:bool=False) -> list:
     fields_found["model"]=Fields_Infos[0]
     fields_found["battery"]=Fields_Infos[1].split("V")[0] #supression du V dans info bat
     fields_found["battery_unit"]="V"
-# #    fields_found["button"]=infos["qualifier"] #Ajout d'une info button pour remonter en numérique l'info de la cde 
+
     fields_found["button"]=int(infos["subType"]) #Ajout d'une info button pour remonter en numérique l'info de la cde 
 
     match fields_found["subType"]:
