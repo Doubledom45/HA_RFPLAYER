@@ -3,6 +3,7 @@ DOMAIN = "rfplayer"
 DATA_RFOBJECT = "rfobject"
 
 CONF_AUTOMATIC_ADD = "automatic_add"
+
 CONF_RECONNECT_INTERVAL = "reconnect_interval"
 
 DEFAULT_RECONNECT_INTERVAL = 10
