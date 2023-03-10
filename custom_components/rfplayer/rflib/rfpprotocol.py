@@ -248,7 +248,7 @@ class CommandSerialization(PacketHandling):
         super().__init__(*args, **kwargs)
         self.init_options = init_options
     if packet_callback:
-            self.packet_callback = packet_callback
+        self.packet_callback = packet_callback
         self._event = asyncio.Event()
         self._lock = asyncio.Lock()
 
