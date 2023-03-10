@@ -232,6 +232,12 @@ async def async_setup_entry(hass, entry):
             event_callback=event_callback,
             disconnect_callback=reconnect,
             loop=hass.loop,
+            init_options={'START_COMMANDS':[
+                            "RECEIVER + *","SENSITIVITY L 0","SENSITIVITY H 0","SELECTIVITY L 0",
+                            "SELECTIVITY H 0","RFLINK 1","RFLINKTRIGGER L 0","RFLINKTRIGGER H 0",
+                            "LBT 16","FORMAT JSON","STATUS"
+                        ]
+            },
         )
 
         try:
