@@ -31,6 +31,7 @@ class ProtocolBase(asyncio.Protocol):
         self,
         loop: Optional[asyncio.AbstractEventLoop] = None,
         disconnect_callback: Optional[Callable[[Optional[Exception]], None]] = None,
+        init_options: Optional[Sequence[dict]] = None,
         **kwargs: Any,
     ) -> None:
         """Initialize class."""
@@ -55,11 +56,14 @@ class ProtocolBase(asyncio.Protocol):
         """
         self.transport = transport
         self.send_raw_packet("ZIA++HELLO")
-        self.send_raw_packet("ZIA++FACTORYRESET")
-        self.send_raw_packet("ZIA++RECEIVER + *")
-        self.send_raw_packet("ZIA++FORMAT JSON")
-        self.send_raw_packet("ZIA++STATUS TXT") # si tu envoie la demande de status, il faut autoriser le log ?
-
+##        self.send_raw_packet("ZIA++FACTORYRESET")
+##        self.send_raw_packet("ZIA++RECEIVER + *")
+##        self.send_raw_packet("ZIA++FORMAT JSON")
+##        self.send_raw_packet("ZIA++STATUS TXT") # si tu envoie la demande de status, il faut autoriser le log ?
+        if self.init_options['START_COMMANDS']:
+            for command in self.init_options['START_COMMANDS']:
+                self.send_raw_packet("ZIA++"+command)
+ 
     def data_received(self, data: bytes) -> None:
         """Add incoming data to buffer."""
         try:
@@ -109,6 +113,7 @@ class PacketHandling(ProtocolBase):
         self,
         *args: Any,
         packet_callback: Optional[Callable[[PacketType], None]] = None,
+        init_options: Optional[Sequence[dict]] = None,
         **kwargs: Any,
     ) -> None:
         """Add packethandling specific initialization.
@@ -117,6 +122,7 @@ class PacketHandling(ProtocolBase):
         """
         log.debug("PacketHandling")
         super().__init__(*args, **kwargs)
+        self.init_options = init_options
         if packet_callback:
             self.packet_callback = packet_callback
 
@@ -234,12 +240,14 @@ class CommandSerialization(PacketHandling):
         self,
         *args: Any,
         packet_callback: Optional[Callable[[PacketType], None]] = None,
+        init_options: Optional[Sequence[dict]] = None,
         **kwargs: Any,
     ) -> None:
         """Add packethandling specific initialization."""
 #        #log.debug("CommandSerialization")
         super().__init__(*args, **kwargs)
-        if packet_callback:
+        self.init_options = init_options
+    if packet_callback:
             self.packet_callback = packet_callback
         self._event = asyncio.Event()
         self._lock = asyncio.Lock()
@@ -280,11 +288,13 @@ class EventHandling(PacketHandling):
         *args: Any,
         event_callback: Optional[Callable[[PacketType], None]] = None,
         ignore: Optional[Sequence[str]] = None,
+        init_options: Optional[Sequence[dict]] = None,
         **kwargs: Any,
     ) -> None:
         """Add eventhandling specific initialization."""
         super().__init__(*args, **kwargs)
         self.event_callback = event_callback
+        self.init_options = init_options
 #        # suppress printing of packets
         log.debug("EventHandling")
         if not kwargs.get("packet_callback"):
@@ -357,6 +367,7 @@ def create_rfplayer_connection(
     disconnect_callback: Optional[Callable[[Optional[Exception]], None]] = None,
     ignore: Optional[Sequence[str]] = None,
     loop: Optional[asyncio.AbstractEventLoop] = None,
+    init_options: Optional[Sequence[dict]] = None
 ) -> "Coroutine[Any, Any, Tuple[asyncio.BaseTransport, ProtocolBase]]":
     """Create Rflink manager class, returns transport coroutine."""
     if loop is None:
@@ -369,6 +380,7 @@ def create_rfplayer_connection(
         event_callback=event_callback,
         disconnect_callback=disconnect_callback,
         ignore=ignore if ignore else [],
+        init_options=init_options,
     )
 
     # setup serial connection
