@@ -1,12 +1,12 @@
 {
   "domain": "rfplayer",
   "name": "TEST_HA_RFPlayer",
-  "version": "1.0.0"
+  "version": "1.0.0",
   "integration_type": "hub",
   "documentation": "https://github.com/Doubledom45/HA_RFPLAYER_TEST/tree/main/Information",
   "issue_tracker": "https://github.com/Doubledom45/HA_RFPLAYER_TEST/issues",
   "dependencies": [],
   "codeowners": ["@Doubledom45", "@Crazymikefra", "@jaroslawp", "@Aohzan", "@gce-electronics"],
   "config_flow": true,
-  "iot_class": "local_push",
+  "iot_class": "local_push"
 } 
