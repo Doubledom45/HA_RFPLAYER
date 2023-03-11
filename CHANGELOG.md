@@ -5,15 +5,16 @@
 
 [@+DoM(Ô¿Ô) 🖖]
 
-Dans l'outil de développement, création d'un sélecteur de protocol !
+Dans l'outil de développement, création d'un sélecteur de protocol ! et de "
+Entity type"
 
 Le 1er est vide 'space' pour test sans protocol directement dans commande.
 Attention à la syntaxe des commandes !
 
 
-- Les commandes RTS devraient être OK en mode UI
+- ICI test commandes RTS 
 - La commande ASSOC doit-être avec un ID x
-![image](https://user-images.githubusercontent.com/97252459/224477047-cd72b54e-e0b8-4a25-bf09-d4bfda62ebb0.png)
+![image](https://user-images.githubusercontent.com/97252459/224477543-e17eeeee-c1d9-41d7-9be3-f859c0a24c75.png)
   Info en mode Yaml:
 
 service: rfplayer.send_command
@@ -23,10 +24,10 @@ data:
   command: ASSOC
   protocol: RTS
   device_id: "1"
-  entity_type: switch
+  entity_type: cover
 ````
-- Le switch doit être créé normalement avec switch.rts_x ou x est le numéro ID
-![image](https://user-images.githubusercontent.com/97252459/224477085-78a7ad43-4391-4149-8e97-1ba653735296.png)
+- Le "cover" doit être créé normalement avec switch.rts_x ou x est le numéro ID
+![image](https://user-images.githubusercontent.com/97252459/224477511-d2c39671-f9dd-4bde-9c35-76f35f1940c6.png)
 
   Info en mode Yaml [ici avec création du switch.rts_1]
 ````
@@ -38,3 +39,4 @@ data:
   device_id: "1"
   entity_type: switch
 ````
+Ce qui doit donner ![image](https://user-images.githubusercontent.com/97252459/224477619-75d91e29-2b70-407a-a4a2-499bdd9ed805.png)
