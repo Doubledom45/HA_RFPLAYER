@@ -3,6 +3,8 @@
 ## 1.0.0
 -Refonte complet de l'addon
 
+## -Remerciement [crazymikefra](https://github.com/crazymikefra/HA_RFPlayer)
+
 [@+DoM(Ô¿Ô) 🖖]
 
 Dans l'outil de développement, création d'un sélecteur de protocol ! et de "
