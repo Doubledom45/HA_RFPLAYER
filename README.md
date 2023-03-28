@@ -1,4 +1,4 @@
-# HA_Rfplayer_TEST
+# HA_Rfplayer
 `Complete redesign of the add-on`
 
 RFPlayer custom component/integration for Home assistant
@@ -25,4 +25,4 @@ Based on  rflink integration
 
 ## Information
 
-[Voir les fichiers pdf pour l'API](https://github.com/Doubledom45/HA_RFPLAYER_TEST/tree/main/Information) et [Information FR](https://github.com/Doubledom45/HA_RFPLAYER_TEST/blob/main/Information/installation.md) pour plus d'information en Français ! 
+[Voir les fichiers pdf pour l'API](https://github.com/Doubledom45/HA_RFPLAYER/tree/main/Information) et [Information FR](https://github.com/Doubledom45/HA_RFPLAYER/blob/main/Information/installation.md) pour plus d'information en Français ! 
