@@ -262,5 +262,3 @@ def packet_events(packet: PacketType) -> Generator[PacketType, None, None]:
             "platform": platform,
             "protocol": protocol
         }
-
-
