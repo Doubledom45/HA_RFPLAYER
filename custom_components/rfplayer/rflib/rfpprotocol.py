@@ -196,7 +196,9 @@ class PacketHandling(ProtocolBase):
                     self.send_raw_packet(f"ZIA++{protocol}") #Envoie le simulate avec réponse dans 5 sec si JAMMING "ON"
                 else:
                     self.send_raw_packet(f"ZIA++{protocol} {command} {device_id}") # dans le cas d'une commande depuis dévelopeur avec commande= SIMULATE !
-
+## Test pour DOMIA ou chacon ID <256
+            elif protocol == "DOMIA" or protocol == "CHACON" :
+                    self.send_raw_packet(f"ZIA++{command} {device_id} {protocol}") # Permet d'avoir un ID qui représente le N° du Bp Limité au 256 premier ID (FIRMWARE)
             else :
                 self.send_raw_packet(f"ZIA++{command} ID {device_id} {protocol}")
 
