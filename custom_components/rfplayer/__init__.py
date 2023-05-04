@@ -3,7 +3,6 @@ import asyncio
 from collections import defaultdict
 import copy
 import logging
-
 import async_timeout
 from serial import SerialException
 from homeassistant.util import slugify
@@ -435,5 +434,3 @@ class RfplayerDevice(RestoreEntity):
         )
         if device:
             device_registry.async_remove_device(device)
-
-
