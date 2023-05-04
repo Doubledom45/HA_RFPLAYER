@@ -91,6 +91,7 @@ ON DOIT valider
 
 Puis on attend que HA redémarre, on peux cliquer sur terminer !
 ![image](https://user-images.githubusercontent.com/97252459/224484520-b18ef2bf-b71f-483a-b4a5-e47e688b3eda.png)
+![image](https://user-images.githubusercontent.com/97252459/236193829-dc82ee5c-7fa1-4c0e-86e0-09b26fcbe84e.png)
 
 ON REPASSE SUR
 ![image](https://user-images.githubusercontent.com/97252459/224484572-51d460f3-ee54-4c91-ae1a-affa70de1280.png)
