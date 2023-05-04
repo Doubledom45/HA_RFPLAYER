@@ -1,4 +1,5 @@
 # CHANGELOG
+
 ## 1.0.1
 Replace deprecated async_get_registry method for HA 2023-5
 
