@@ -1,4 +1,4 @@
-# HA_RFPlayer TEST
+# HA_RFPlayer
 
 Composant/intégration personnalisé RFPlayer pour Home assistant
 
@@ -41,7 +41,7 @@ UN Clic sur![image](https://user-images.githubusercontent.com/97252459/224484013
 
 [Dépôt]()
 
-https://github.com/Doubledom45/HA_Rfplayer_TEST
+[https://github.com/Doubledom45/HA_Rfplayer]
 
 [Catégorie]()
 
@@ -51,25 +51,31 @@ Intégration
 
 Puis [Ajouter]()
 
-![image](https://user-images.githubusercontent.com/97252459/224484066-ad997392-e156-4642-9f10-be08922a4479.png)
+![image](https://user-images.githubusercontent.com/97252459/236184535-f63ebc80-838e-4631-a72d-5cd2d88b7477.png)
 
 Il peut y avoir d'autres intégrations, bien faire un clic sur cette version!
+Devrait devenir, puis cliquer sur la croix pour fermer :
 
-![image](https://user-images.githubusercontent.com/97252459/224484124-354486d5-2335-40f7-a1e8-f3c0a2f8144f.png)
-
-
-
-Si ok, le nouveau dépôt devrait être présent !
-
-![image](https://user-images.githubusercontent.com/97252459/224484305-efd58ffc-e4b7-44ee-992a-2fd66c1ccc2e.png)
+![image](https://user-images.githubusercontent.com/97252459/236185781-54d6aef3-2ac9-49e8-997d-264efde2fe02.png)
 
 
-Puis sur [Téléchargé]()
 
-![image](https://user-images.githubusercontent.com/97252459/224484371-2630234e-0c50-443c-b9cd-64035cea074b.png)
+Si ok, le nouveau dépôt devrait être présent dans HA
+
+![image](https://user-images.githubusercontent.com/97252459/236187859-ae13d033-4f6c-444c-b28c-a5c1f5b8c299.png)
+
+Clic sur cette intégration !
+
+![image](https://user-images.githubusercontent.com/97252459/236186387-ee45e8b8-86c8-40f1-9a32-21d28023a38c.png)
 
 
-Confirmer le téléchargement
+Un clic sur ![image](https://user-images.githubusercontent.com/97252459/236188971-e68a7b96-ab44-443f-a5d2-103d23f80913.png)
+
+![image](https://user-images.githubusercontent.com/97252459/236189314-6d7ed618-9489-4ece-a52b-6c06ae6afe8c.png)
+
+
+Confirmer le téléchargement![image](https://user-images.githubusercontent.com/97252459/236189484-90e7afc5-ecc7-4fe8-952a-02c3cd6ba741.png)
+
 
 Devrait-être maintenant dans le répertoire config/custom_components/
 
@@ -77,11 +83,11 @@ ON REPASSE SOUS HA !
 ![image](https://user-images.githubusercontent.com/97252459/224484449-29376bec-4bc5-4533-8355-415c88ece7d7.png)
 
 IL DEVRAIT Y AVOIR AU MOINS CETTE CORRECTION A FAIRE
-![image](https://user-images.githubusercontent.com/97252459/224484465-45896811-69f7-4307-81f6-70bce0472ead.png)
+![image](https://user-images.githubusercontent.com/97252459/236189834-5d9777cf-c938-46c3-bea8-a280f54c9a26.png)
 
 
 ON DOIT valider
-![image](https://user-images.githubusercontent.com/97252459/224484504-f913d4c8-6555-4635-8b09-ae38bd6d631d.png)
+![image](https://user-images.githubusercontent.com/97252459/236190042-b66049c1-089e-4f02-874a-d5eb65f26aeb.png)
 
 Puis on attend que HA redémarre, on peux cliquer sur terminer !
 ![image](https://user-images.githubusercontent.com/97252459/224484520-b18ef2bf-b71f-483a-b4a5-e47e688b3eda.png)
@@ -94,10 +100,9 @@ PUIS SUR
 ![image](https://user-images.githubusercontent.com/97252459/224484600-09a1095b-0160-4120-b358-fcd74454cadc.png)
 
 DANS CONFIGURER UNE NOUVELLE INTEGRATION
-
-![image](https://user-images.githubusercontent.com/97252459/224484708-5c019fe2-941d-4549-a5b7-1efd85470c84.png)
-
 ON ENTRE "rfplayer"
+
+![image](https://user-images.githubusercontent.com/97252459/236191481-c2732228-1446-4666-8a9d-fe6dee69cdff.png)
 
 PUIS ON CLIC SUR CELLE-CI
 L’assistant devrait démarrer
@@ -116,7 +121,14 @@ Si VALIDER
 
 Puis Terminer
 
-![image](https://user-images.githubusercontent.com/97252459/224485005-69ba9b75-82d9-4742-a2ec-c1a218a66fcc.png)
+![image](https://user-images.githubusercontent.com/97252459/236192065-10f32514-d76d-4950-9e8c-4545042de21d.png) Clic sur ![image](https://user-images.githubusercontent.com/97252459/236192522-f3733c4c-461b-4ab1-b1d5-1105e4f5a6f7.png)![image](https://user-images.githubusercontent.com/97252459/236192355-c39fe6bf-f33c-4f14-b41a-a01e04ffdbfe.png)
+
+Choisir l'ajout automatique (c'est mieux !) Puis ![image](https://user-images.githubusercontent.com/97252459/236192807-fa193378-9346-497d-9dc4-6d83e33ded0f.png)
+
+![image](https://user-images.githubusercontent.com/97252459/236192977-ac3ce17a-bee3-46f7-b750-6ae53769204a.png)
+
+Clic sur ![image](https://user-images.githubusercontent.com/97252459/236193122-baf6d8d4-f70e-4b92-bbd3-e2776a53f9b4.png)
+
 
 ON DOIT VOIR LES ENTITES SE REMPLIR ON PEUT CLIQUER SUR 1 appareil
 
