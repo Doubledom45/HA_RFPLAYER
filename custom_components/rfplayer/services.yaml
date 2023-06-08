@@ -3,37 +3,93 @@ send_command:
   fields:
     command:
       name: Command
-      description: The command to be sent.
+      description: The command to be sent. [add Protocol]
       required: true
-      example: "ON"
+      default: " " 
+      example: "HELLO"
       selector:
-        text:
+        select:
+          options:
+              - " "
+              - 1 FACTORYRESET. FORMAT JSON. STATUS. JAMMING 7. JAMMING SIMULATE
+              - HELLO
+              - PING
+              - "ON"
+              - "OFF"
+              - ALL_ON
+              - ALL_OFF
+              - DIM %4
+              - EDISIOFRAME
+              - ASSOC
+              - DISSOC
+              - ASSOC_OFF
+              - DISSOC_OFF
+              - RECEIVER + *
+              - REPEATER + *
+              - REPEATER ON
+              - REPEATER OFF
+              - LEDACTIVITY 0
+              - LEDACTIVITY 1
+              - JAMMING 7
+              - JAMMING SIMULATE
+              - FREQ L 433920
+              - FREQ L 433420
+              - FREQ L 0
+              - FREQ H 868950
+              - FREQ H 868350
+              - FREQ H 0
+              - SELECTIVITY L 4
+              - SELECTIVITY H 4
+              - SENSITIVITY L 4
+              - SENSITIVITY H 4
+              - DSPTRIGGER L 6
+              - DSPTRIGGER H 8
+              - RFLINK 0
+              - RFLINK 1
+              - RFLINKTRIGGER L 12
+              - RFLINKTRIGGER H 10
+              - LBT 16
+              - FORMAT RFLINK OFF
+              - FORMAT RFLINK BINARY
+              - " "
+          mode: dropdown
     protocol:
       name: Protocol
-      description: RFPlayer compatible protocol.
+      description: RFPlayer compatible protocol.[Parametre]
       required: true
       example: CHACON
       selector:
         select:
           options:
               - " "
-              - "X10"
-              - "VISONIC"
               - "BLYSS"
               - "CHACON"
-              - "OREGON"
               - "DOMIA"
-              - "OWL"
-              - "X2D"
-              - "RTS"
-              - "KD101"
-              - "PARROT"
-              - "TIC"
+              - "EDISIO"
+              - "EDISIOFRAME"
               - "FS20"
               - "JAMMING"
               - "JAMMING SIMULATE"
-              - "EDISIO"
-              - "EDISIOFRAME"
+              - "KD101"
+              - "OREGON"
+              - "OREGONV1"
+              - "OREGONV2"
+              - "OREGONV3/OWL"
+              - "OWL"
+              - "PARROT"
+              - "RTS"
+              - "TIC"
+              - "VISONIC"
+              - "VISONIC433"
+              - "VISONIC868"
+              - "X10"
+              - "X2D"
+              - "X2D433"
+              - "X2D868"
+              - "X2DELEC"
+              - "X2DGAS"
+              - "X2DSHUTTER"
+              - " "
           mode: dropdown
     device_address:
       name: Device address
