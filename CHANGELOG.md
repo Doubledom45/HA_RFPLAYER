@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.0.2
+Mise à jour de la sélection des commandes et Protocoles [Paramètres]
+
+Dans l'outil de développement 'services'
+
+Toujours possibilité de passer en Yaml, sélection avec le 1er ou dernier !
+
 ## 1.0.1
 Replace deprecated async_get_registry method for HA 2023-5
 
