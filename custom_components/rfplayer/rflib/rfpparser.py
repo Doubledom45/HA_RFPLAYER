@@ -35,7 +35,7 @@ PACKET_FIELDS = {
     "dir":"direction",
     "uv":"uv",
     "nrj":"energy", # Retour energy de l'OWL
-    "pow":"Power",
+    "pow":"power",
     "P1":"P1",
     "P2":"P2",
     "P3":"P3",
