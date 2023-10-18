@@ -367,6 +367,7 @@ def infoType_13_decode(infos:list,allowEmptyID:bool=False) -> list:
     if fields_found["subType"] == None or fields_found["subType"] == "" : fields_found["subType"]=infos.get("subType")
     fields_found["qualifier"]=infos["qualifier"]
 
+    elements={'cnt1':'Wh','cnt2':'Wh','power':'W'}
     for measure in infos["measures"]:
         if measure['type'] in elements:
             fields_found[measure['type']]= measure['value']
