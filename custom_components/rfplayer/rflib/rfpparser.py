@@ -60,6 +60,9 @@ PACKET_FIELDS = {
     "ON":"01",
     "OFF":"02",
     "dim":"dim",
+#   #Pour TIC
+    "hc1":"cnt1",
+    "hp2":"cnt2",
 }
 
 RTS_ELEM = {
