@@ -22,6 +22,7 @@ SENSOR_ICONS = {
     "humidity": "mdi:water-percent",
     "battery": "mdi:battery",
     "temperature": "mdi:thermometer",
+    "power": "mdi:transmission-tower", 
 }
 
 
