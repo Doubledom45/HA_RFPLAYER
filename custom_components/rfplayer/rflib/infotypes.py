@@ -359,6 +359,25 @@ def infoType_11_decode(infos:list,allowEmptyID:bool=False) -> list:
     if fields_found["id"]!="0" or allowEmptyID:
         return fields_found
     
+def infoType_13_decode(infos:list,allowEmptyID:bool=False) -> list:
+    if infotypes_debug: log.debug("Decode InfoType 13: %d",infos")
+    fields_found = {}
+    
+    fields_found["subType"]=infos.get("subTypeMeaning")
+    if fields_found["subType"] == None or fields_found["subType"] == "" : fields_found["subType"]=infos.get("subType")
+    fields_found["qualifier"]=infos["qualifier"]
+
+    for measure in infos["measures"]:
+        if measure['type'] in elements:
+            fields_found[measure['type']]= measure['value']
+            if elements[measure['type']] != '':
+                fields_found[measure['type']+'_unit']= elements[measure['type']]
+
+    fields_found["id"]=infos["id"]
+    
+    if fields_found["id"]!="0" or allowEmptyID:
+        return fields_found
+    
 def infoType_15_decode(infos:list,allowEmptyID:bool=False) -> list:
     if infotypes_debug: log.debug("Decode InfoType 15 : %d",infos)
     fields_found = {}
