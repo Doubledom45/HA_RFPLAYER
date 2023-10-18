@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.3
+Décodage TIC
+
+
 ## 1.0.2
 Mise à jour de la sélection des commandes et Protocoles [Paramètres]
 
