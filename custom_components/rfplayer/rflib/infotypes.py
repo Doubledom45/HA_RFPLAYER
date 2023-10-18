@@ -360,7 +360,7 @@ def infoType_11_decode(infos:list,allowEmptyID:bool=False) -> list:
         return fields_found
     
 def infoType_13_decode(infos:list,allowEmptyID:bool=False) -> list:
-    if infotypes_debug: log.debug("Decode InfoType 13: %d",infos")
+    if infotypes_debug: log.debug("Decode InfoType 13: %d",infos)
     fields_found = {}
     
     fields_found["subType"]=infos.get("subTypeMeaning")
