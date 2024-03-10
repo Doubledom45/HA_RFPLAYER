@@ -1,3 +1,6 @@
+# SUITE MODIFICATION HA 2024.3 Référentiel Archivé
+Voir sur https://github.com/Doubledom45/TEST-RFPLAYER pour la suite !
+
 # HA_Rfplayer
 `Complete redesign of the add-on`
 
